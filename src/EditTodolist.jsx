@@ -30,7 +30,7 @@ function EditTodolist({todo,currentTodo}){
         //console.log('came to edit')
         let currentuser=JSON.parse(localStorage.getItem('currentuser'))
         if(currentuser){
-            axios.get("http://localhost:3000/auth",{
+            axios.get("https://todo-list-s634.onrender.com/auth",{
               headers:{
                 Authorization:currentuser.token
               }
@@ -66,7 +66,7 @@ function EditTodolist({todo,currentTodo}){
     function update(){
       console.log(todo)
       let currentuser=JSON.parse(localStorage.getItem('currentuser'))
-      axios.put(`http://localhost:3000/todos/${currentuser.id}`,{todo:todo}).then((res)=>{
+      axios.put(`https://todo-list-s634.onrender.com/todos/${currentuser.id}`,{todo:todo}).then((res)=>{
         //console.log(res)
         //navigate('/')
         change([...res.data.out.todo])
