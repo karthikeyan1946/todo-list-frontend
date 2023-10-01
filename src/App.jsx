@@ -65,23 +65,23 @@ function App() {
         <div className="container-fluid px-5">
           <a className="navbar-brand" href="">Todolist</a>
           <div className="navbar-nav">
-            <a className="nav-link" href="/index.html">Home</a>
-            <a className="nav-link" href="/Todolist/index.html">todos</a>
+            <a className="nav-link" href="/">Home</a>
+            <a className="nav-link" href="/Todolist">todos</a>
             </div>
             <div className="navbar-nav ms-auto">
-              {islogged ? <button className="nav-link" onClick={updatecurrentuser}>logout</button> : <> <a href="/login/index.html" className="nav-link">login</a>
-              <a href="/register/index.html" className="nav-link">Register</a></> }
+              {islogged ? <button className="nav-link" onClick={updatecurrentuser}>logout</button> : <> <a href="/login" className="nav-link">login</a>
+              <a href="/register" className="nav-link">Register</a></> }
             </div>
           </div>
       </nav>
     </div>
     <div className="mt-5">
       <Routes>
-        <Route path="/index.html" element={<Home/>}/>
-        <Route path="/Todolist/index.html" element={<TodoList todo={todo} currentTodo={currentTodo}/>}/>
-        <Route path="/login/index.html" element={<Login update={update} currentTodo={currentTodo}/>}/>
-        <Route path="/register/index.html" element={<Register update={update} currentTodo={currentTodo}/>}/>
-        <Route path="/EditTodolist/index.html" element={<EditTodolist todo={todo} currentTodo={currentTodo}/>} />
+        <Route path="/" element={<Home/>}/>
+        <Route path="/Todolist" element={<TodoList todo={todo} currentTodo={currentTodo}/>}/>
+        <Route path="/login" element={<Login update={update} currentTodo={currentTodo}/>}/>
+        <Route path="/register" element={<Register update={update} currentTodo={currentTodo}/>}/>
+        <Route path="/EditTodolist" element={<EditTodolist todo={todo} currentTodo={currentTodo}/>} />
       </Routes>
     </div>
     </>
