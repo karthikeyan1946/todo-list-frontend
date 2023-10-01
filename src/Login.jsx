@@ -15,7 +15,7 @@ function Login({update,currentTodo}){
     const currentuser=JSON.parse(localStorage.getItem('currentuser'))
     //console.log(currentuser)
     if(currentuser){
-      axios.get("http://localhost:3000/auth",{
+      axios.get("https://todo-list-s634.onrender.com/auth",{
         headers:{
           Authorization:currentuser.token
         }
@@ -47,7 +47,7 @@ function Login({update,currentTodo}){
   function submitUser(evt){
     evt.preventDefault()
     //console.log(user)
-    axios.post("http://localhost:3000/login",{user:user}).then(user=>{
+    axios.post("https://todo-list-s634.onrender.com/login",{user:user}).then(user=>{
       //console.log(user)
       if(user.data.success){
         localStorage.setItem('currentuser',JSON.stringify({...user.data.user}))
