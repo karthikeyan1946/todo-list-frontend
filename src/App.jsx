@@ -77,11 +77,11 @@ function App() {
     </div>
     <div className="mt-5">
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/Todolist" element={<TodoList todo={todo} currentTodo={currentTodo}/>}/>
-        <Route path="/login" element={<Login update={update} currentTodo={currentTodo}/>}/>
-        <Route path="/register" element={<Register update={update} currentTodo={currentTodo}/>}/>
-        <Route path="/EditTodolist" element={<EditTodolist todo={todo} currentTodo={currentTodo}/>} />
+        <Route path="/index.html" element={<Home/>}/>
+        <Route path="/Todolist/index.html" element={<TodoList todo={todo} currentTodo={currentTodo}/>}/>
+        <Route path="/login/index.html" element={<Login update={update} currentTodo={currentTodo}/>}/>
+        <Route path="/register/index.html" element={<Register update={update} currentTodo={currentTodo}/>}/>
+        <Route path="/EditTodolist/index.html" element={<EditTodolist todo={todo} currentTodo={currentTodo}/>} />
       </Routes>
     </div>
     </>
