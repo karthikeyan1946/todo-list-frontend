@@ -65,12 +65,12 @@ function App() {
         <div className="container-fluid px-5">
           <a className="navbar-brand" href="">Todolist</a>
           <div className="navbar-nav">
-            <a className="nav-link" href="/">Home</a>
-            <a className="nav-link" href="/Todolist">todos</a>
+            <a className="nav-link" href="/index.html">Home</a>
+            <a className="nav-link" href="/Todolist/index.html">todos</a>
             </div>
             <div className="navbar-nav ms-auto">
-              {islogged ? <button className="nav-link" onClick={updatecurrentuser}>logout</button> : <> <a href="/login" className="nav-link">login</a>
-              <a href="/register" className="nav-link">Register</a></> }
+              {islogged ? <button className="nav-link" onClick={updatecurrentuser}>logout</button> : <> <a href="/login/index.html" className="nav-link">login</a>
+              <a href="/register/index.html" className="nav-link">Register</a></> }
             </div>
           </div>
       </nav>
