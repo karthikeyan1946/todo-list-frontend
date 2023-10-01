@@ -37,7 +37,7 @@ export default function TodoList({todo,currentTodo}){
       setCurrentuser(currentuser)
       //console.log(currentuser,"hello")
       if(currentuser){
-        axios.get("http://localhost:3000/auth",{
+        axios.get("https://todo-list-s634.onrender.com/auth",{
           headers:{
             Authorization:currentuser.token
           }
@@ -57,7 +57,7 @@ export default function TodoList({todo,currentTodo}){
 
     async function removeTodo(id){
       try{
-        let res=await axios.delete(`http://localhost:3000/todos/${currentuser.id}/${id}`)
+        let res=await axios.delete(`https://todo-list-s634.onrender.com/todos/${currentuser.id}/${id}`)
         //console.log(res)
         //setTodo([...res.data.out.todos])
         change([...res.data.out.todos])
@@ -72,7 +72,7 @@ export default function TodoList({todo,currentTodo}){
     }
     async function toggleTodo(id){
       try{
-        let res=await axios.patch(`http://localhost:3000/todos/${currentuser.id}/${id}`)
+        let res=await axios.patch(`https://todo-list-s634.onrender.com/todos/${currentuser.id}/${id}`)
         //console.log(res)
         //setTodo([...res.data.out.todos])
         change([...res.data.out.todos])
@@ -82,7 +82,7 @@ export default function TodoList({todo,currentTodo}){
     }
     async function updateTodo(newTodo){
       try{
-        let res=await axios.post(`http://localhost:3000/todos/${currentuser.id}`,{todo:{ completed:false,todo:newTodo}})
+        let res=await axios.post(`https://todo-list-s634.onrender.com/todos/${currentuser.id}`,{todo:{ completed:false,todo:newTodo}})
         //console.log(res.data.out.todos)
         //setTodo([...res.data.out.todos])
         change([...res.data.out.todos])
@@ -93,7 +93,7 @@ export default function TodoList({todo,currentTodo}){
     }
     async function newForm(){
       try{
-        let res=await axios.delete(`http://localhost:3000/todos/${currentuser.id}`)
+        let res=await axios.delete(`https://todo-list-s634.onrender.com/todos/${currentuser.id}}`)
         if(res.data.success){
           change([])
         }else{
