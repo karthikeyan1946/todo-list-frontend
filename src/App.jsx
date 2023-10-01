@@ -9,6 +9,20 @@ import { useEffect, useState} from 'react';
 import { useNavigate } from 'react-router';
 import axios from 'axios'
 
+async function getInitialTodo(){
+  let user=JSON.parse(localStorage.getItem('currentuser'))
+  //console.log(user.username)
+  if(!user)return [];
+  let res=await axios.get(`http://localhost:3000/todos/${user.id}`)
+  if(res.data.out){
+    let list=res.data.out.todos
+    return list
+  }
+  return [];
+}
+
+
+let initialTodo=await getInitialTodo();
 
 
 
@@ -89,18 +103,5 @@ function App() {
     </>*/
   )
 }
-async function getInitialTodo(){
-  let user=JSON.parse(localStorage.getItem('currentuser'))
-  //console.log(user.username)
-  if(!user)return [];
-  let res=await axios.get(`http://localhost:3000/todos/${user.id}`)
-  if(res.data.out){
-    let list=res.data.out.todos
-    return list
-  }
-  return [];
-}
 
-
-let initialTodo=await getInitialTodo();
 export default App
