@@ -13,7 +13,7 @@ async function getInitialTodo(){
   let user=JSON.parse(localStorage.getItem('currentuser'))
   //console.log(user.username)
   if(!user)return [];
-  let res=await axios.get(`http://localhost:3000/todos/${user.id}`)
+  let res=await axios.get(`https://todo-list-s634.onrender.com/todos/${user.id}`)
   if(res.data.out){
     let list=res.data.out.todos
     return list
