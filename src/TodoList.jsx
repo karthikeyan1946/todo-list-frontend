@@ -93,7 +93,7 @@ export default function TodoList({todo,currentTodo}){
     }
     async function newForm(){
       try{
-        let res=await axios.delete(`https://todo-list-s634.onrender.com/todos/${currentuser.id}}`)
+        let res=await axios.delete(`https://todo-list-s634.onrender.com/todos/${currentuser.id}`)
         if(res.data.success){
           change([])
         }else{
